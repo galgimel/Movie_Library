@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table>
+    <tr>
+        <td><h3 th:text="${director.toString()}"/></td>
+    </tr>
+    <tr>
+        <td>Country:</td>
+        <td><p th:text="${director.getCountry()}"/></td>
+    </tr>
+    <tr>
+        <td>Movies:</td>
+    </tr>
+    <tr th:each="movie : ${director.getMovies()}">
+        <td><p th:text="${movie.toString()}"/></td>
+        <td>
+            <form th:method="GET" th:action="@{/movies/{id}(id=${movie.getId()})}">
+                <input type="submit" value="More"/>
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+<hr>
+<table>
+    <tr>
+        <td>
+            <input type="button" value="Main View"
+                   onclick="window.location.href = '/'"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

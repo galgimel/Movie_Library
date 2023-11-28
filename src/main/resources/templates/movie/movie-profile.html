@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table>
+    <tr>
+        <td><h3 th:text="${movie.toString()}"/></td>
+    <tr>
+        <td>Genre:</td>
+        <td><p th:text="${movie.getGenre()}"/></td>
+    </tr>
+    <tr>
+        <td>Director:</td>
+    </tr>
+    <tr>
+        <td><p th:text="${movie.getDirector().toString()}"></p></td>
+        <td>
+            <form th:method="GET" th:action="@{/directors/{id}(id=${movie.getDirector().getId()})}">
+                <input type="submit" value= "More"/>
+            </form>
+        </td>
+     </tr>
+    <tr>
+        <td>Staring:</td>
+    </tr>
+    <tr th:each="actor : ${movie.getActors()}">
+        <td><p th:text="${actor.toString()}"/></td>
+        <td>
+            <form th:method="GET" th:action="@{/actors/{id}(id=${actor.getId()})}">
+                <input type="submit" value="More"/>
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+<hr>
+<table>
+    <tr>
+        <td>
+            <input type="button" value="Main View"
+                   onclick="window.location.href = '/'"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

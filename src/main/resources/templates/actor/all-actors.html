@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h2 th:text="'All Actors:'"></h2>
+<table>
+    <tr th:each="actor : ${allActors}">
+        <td><p th:text="${actor.getSurname()}"/></td>
+        <td><p th:text="${actor.getName()}"/></td>
+        <td>
+            <form th:method="GET" th:action="@{/actors/{id}(id=${actor.getId()})}">
+                <input type="submit" value="More"/>
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+<hr>
+<input type="button" value="Main View"
+       onclick="window.location.href = '/'"/>
+</body>
+</html>

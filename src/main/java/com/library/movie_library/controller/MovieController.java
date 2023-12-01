@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class MovieController {
     private final MovieService movieService;
 
-    public MovieController(MovieService movieService) {
+    public MovieController(final MovieService movieService) {
         this.movieService = movieService;
     }
 

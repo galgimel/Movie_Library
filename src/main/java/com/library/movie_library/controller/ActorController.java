@@ -16,7 +16,7 @@ public class ActorController {
 
     private final ActorService actorService;
 
-    public ActorController(ActorService actorService) {
+    public ActorController(final ActorService actorService) {
         this.actorService = actorService;
     }
 

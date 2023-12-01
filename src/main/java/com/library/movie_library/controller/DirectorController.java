@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class DirectorController {
     private final DirectorService directorService;
 
-    public DirectorController(DirectorService directorService) {
+    public DirectorController(final DirectorService directorService) {
         this.directorService = directorService;
     }
 

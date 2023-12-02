@@ -2,6 +2,7 @@ package com.library.movie_library.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.List;
 
@@ -13,9 +14,9 @@ import java.util.List;
 @Table(name = "movies")
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @UuidGenerator
     @Column(name = "id")
-    private int id;
+    private String id;
 
     @Column(name = "name")
     private String name;

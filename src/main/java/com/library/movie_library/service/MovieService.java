@@ -22,7 +22,7 @@ public class MovieService {
     }
 
     @Transactional
-    public Movie getMovie(final int id) {
+    public Movie getMovie(final String id) {
         return movieRepository.getReferenceById(id);
     }
 }

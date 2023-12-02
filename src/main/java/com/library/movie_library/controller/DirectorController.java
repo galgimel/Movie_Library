@@ -31,10 +31,7 @@ public class DirectorController {
     }
 
     @GetMapping("/{id}")
-    public String getDirector(@PathVariable final int id, final Model model) {
-       if (id == 0) {
-           return "redirect:/directors";
-       }
+    public String getDirector(@PathVariable final String id, final Model model) {
        model.addAttribute("director", directorService.getDirector(id));
 
        return "/director/director-profile";

@@ -20,7 +20,7 @@ public class DirectorService {
     }
 
     @Transactional
-    public Director getDirector(final int id) {
+    public Director getDirector(final String id) {
         return directorRepository.getReferenceById(id);
     }
 }

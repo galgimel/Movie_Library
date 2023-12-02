@@ -22,7 +22,7 @@ public class ActorService {
     }
 
     @Transactional
-    public Actor getActor(final int id) {
+    public Actor getActor(final String id) {
         return actorRepository.getReferenceById(id);
     }
 }

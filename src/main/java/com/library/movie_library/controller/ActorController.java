@@ -33,7 +33,7 @@ public class ActorController {
     }
 
     @GetMapping("/{id}")
-    public String getActor(@PathVariable final int id, final Model model) {
+    public String getActor(@PathVariable final String id, final Model model) {
         model.addAttribute("actor", actorService.getActor(id));
 
         return "/actor/actor-profile";

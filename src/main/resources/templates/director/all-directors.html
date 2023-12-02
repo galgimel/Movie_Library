@@ -9,8 +9,7 @@
 <h2 th:text="'All Directors:'"></h2>
 <table>
     <tr th:each="director : ${allDirectors}">
-        <td><p th:text="${director.getSurname()}"/></td>
-        <td><p th:text="${director.getName()}"/></td>
+        <td><p th:text="${director.toString()}"/></td>
         <td>
             <form th:method="GET" th:action="@{/directors/{id}(id=${director.getId()})}">
                 <input type="submit" value="More"/>

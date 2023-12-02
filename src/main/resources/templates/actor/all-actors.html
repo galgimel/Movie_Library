@@ -9,8 +9,7 @@
 <h2 th:text="'All Actors:'"></h2>
 <table>
     <tr th:each="actor : ${allActors}">
-        <td><p th:text="${actor.getSurname()}"/></td>
-        <td><p th:text="${actor.getName()}"/></td>
+        <td><p th:text="${actor.toString()}"/></td>
         <td>
             <form th:method="GET" th:action="@{/actors/{id}(id=${actor.getId()})}">
                 <input type="submit" value="More"/>

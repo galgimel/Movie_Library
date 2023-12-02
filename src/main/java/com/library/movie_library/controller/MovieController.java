@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public String getMovie(@PathVariable final int id, final Model model) {
+    public String getMovie(@PathVariable final String id, final Model model) {
         model.addAttribute("movie", movieService.getMovie(id));
 
         return "/movie/movie-profile";
